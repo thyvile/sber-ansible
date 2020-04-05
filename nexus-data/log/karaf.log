@@ -1,0 +1,168 @@
+Apr 05, 2020 2:39:18 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 2:39:19 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 2:39:21 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 2:39:21 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 2:55:32 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 2:55:33 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 2:55:34 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 2:55:34 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:03:29 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:03:30 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:03:31 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:03:31 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:22:55 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:22:57 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:22:59 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:22:59 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:28:43 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:28:44 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:28:46 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:28:46 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:34:20 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:34:20 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:34:21 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:34:21 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:39:44 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:39:45 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:39:45 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:39:45 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 3:45:05 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 3:45:06 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 3:45:07 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 3:45:07 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 4:25:47 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 4:25:48 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 4:25:49 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 4:25:49 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 4:35:43 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 4:35:44 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 4:35:45 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 4:35:45 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 4:38:24 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 4:38:24 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 4:38:25 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 4:38:25 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 4:42:06 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 4:42:07 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 4:42:08 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 4:42:08 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 4:54:03 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 4:54:04 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 4:54:05 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 4:54:05 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 5:06:44 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 5:06:45 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 5:06:46 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 5:06:46 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 5:12:54 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 5:12:55 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 5:12:56 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 5:12:56 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 5:23:04 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 5:23:05 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 5:23:06 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 5:23:06 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 5:41:48 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 5:41:49 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 5:41:49 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 5:41:49 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 6:30:06 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 6:30:07 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 6:30:08 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 6:30:08 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 6:46:20 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 6:46:20 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 6:46:21 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 6:46:21 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 8:02:31 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 8:02:33 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 8:02:34 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 8:02:34 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+Apr 05, 2020 8:19:07 PM org.apache.karaf.main.Main launch
+INFO: Installing and starting initial bundles
+Apr 05, 2020 8:19:07 PM org.apache.karaf.main.Main launch
+INFO: All initial bundles installed and set to start
+Apr 05, 2020 8:19:08 PM org.sonatype.nexus.karaf.NexusMain launch
+INFO: ...launched Nexus!
+Apr 05, 2020 8:19:08 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100

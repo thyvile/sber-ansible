@@ -1,0 +1,165 @@
+#################################################
+# DO Community Playbooks: Docker
+#################################################
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install required system packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'libnss3-tools' ,'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools', 'python-pip']
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: Add a docker network for the proxy
+      become: yes
+      docker_network:
+        name: nginx-proxy
+      tags: "container"
+
+    - name: Add Jenkins/Nexus to local hosts file
+      blockinfile: 
+        path: /etc/hosts
+        state: present
+        block: |
+          127.0.0.1 jenkins.ru
+          127.0.0.1 nexus.ru
+
+    - name: Create certs dir
+      file:
+        path: "{{playbook_dir}}/certs"
+        state: directory
+
+    - name: Create Nexus data dir
+      file:
+        path: "{{playbook_dir}}/nexus-data"
+        state: directory
+        owner: 200
+        group: 200
+
+    - name: Check nexus-data dir ownership just in case
+      command: "chown -R 200:200 {{playbook_dir}}/nexus-data"
+
+    - name: Create Jenkins data dir
+      file:
+        path: "{{playbook_dir}}/jenkins_host"
+        state: directory
+        owner: 1000
+        group: 1000
+
+    - name: Copy our test job to Jenkins folder
+      shell: "cp -r {{playbook_dir}}/jobs {{playbook_dir}}/jenkins_host/ && chown -R 1000:1000 {{playbook_dir}}/jenkins_host/jobs"
+
+    - openssl_privatekey:
+        path: "{{playbook_dir}}/certs/jenkins.ru.key"
+        size: 2048 
+
+    - openssl_csr:
+        path: "{{playbook_dir}}/certs/jenkins.ru.csr"
+        privatekey_path: "{{playbook_dir}}/certs/jenkins.ru.key"
+
+    - openssl_certificate:
+        path: "{{playbook_dir}}/certs/jenkins.ru.crt"
+        privatekey_path: "{{playbook_dir}}/certs/jenkins.ru.key"
+        csr_path: "{{playbook_dir}}/certs/jenkins.ru.csr"
+        provider: selfsigned
+        subject_alt_name:
+          - www.jenkins.ru
+          - jenkins.ru
+
+    - openssl_privatekey:
+        path: "{{playbook_dir}}/certs/nexus.ru.key"
+        size: 2048 
+
+    - openssl_csr:
+        path: "{{playbook_dir}}/certs/nexus.ru.csr"
+        privatekey_path: "{{playbook_dir}}/certs/nexus.ru.key"
+
+    - openssl_certificate:
+        path: "{{playbook_dir}}/certs/nexus.ru.crt"
+        privatekey_path: "{{playbook_dir}}/certs/nexus.ru.key"
+        csr_path: "{{playbook_dir}}/certs/nexus.ru.csr"
+        provider: selfsigned
+        subject_alt_name:
+          - www.nexus.ru
+          - nexus.ru
+
+    - name: Add our self-signed certs to trusted
+      shell: "cp {{playbook_dir}}/certs/*.crt /usr/share/ca-certificates/ && update-ca-certificates"
+
+    - name: Run jwilder/nginx-proxy
+      become: yes
+      docker_container:
+        restart: yes
+        restart_policy: always
+        image: jwilder/nginx-proxy
+        state: started
+        name: proxy
+        networks:
+          - name: nginx-proxy
+        volumes:
+          - "{{playbook_dir}}/certs:/etc/nginx/certs"
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+        ports:
+          - '80:80'
+          - '443:443'
+      tags: "container"
+
+    - name: Run Jenkins
+      docker_container:
+        restart: yes
+        restart_policy: always
+        image: jenkins/jenkins:lts
+        state: started
+        name: jenkins
+        networks:
+          - name: nginx-proxy
+        ports:
+          - 8080:8080
+        volumes:
+          - "{{playbook_dir}}/jenkins_host:/var/jenkins_home"
+        env:
+          VIRTUAL_HOST: 'jenkins.ru'
+          VIRTUAL_PORT: 8080
+          JAVA_OPTS: '-Dhudson.model.User.allowNonExistentUserToLogin=true -Djenkins.install.runSetupWizard=false'
+      tags: "container"
+
+    - name: Run Nexus
+      docker_container:
+        restart: yes
+        restart_policy: always
+        image: sonatype/docker-nexus3
+        state: started
+        name: nexus
+        networks:
+          - name: nginx-proxy
+        ports:
+          - 8081:8081
+        volumes:
+          - "{{playbook_dir}}/nexus-data:/nexus-data"
+        env:
+          VIRTUAL_HOST: 'nexus.ru'
+          VIRTUAL_PORT: 8081
+
+    - name: Install Jenkins plugins
+      shell: sleep 10 && sudo docker exec jenkins /usr/local/bin/install-plugins.sh nexus-artifact-uploader nexus-jenkins-plugin && sleep 10 && docker restart jenkins
+      become: yes
